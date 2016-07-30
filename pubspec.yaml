@@ -1,0 +1,4 @@
+name: js_interop_examples
+dependencies:
+  browser: any
+  js: any

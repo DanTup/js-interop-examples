@@ -1,0 +1,28 @@
+<html>
+<head>
+    <title>Visual Studio Code: Interop Example</title>
+</head>
+<!-- Not the real API, but a nice mock proving JS interop is working -->
+<script src="vscode.js"></script>
+
+<!-- Load our Dart application with a main() function -->
+<script type="application/dart" src="vscode_example.dart"></script>
+
+<!-- Support pub compiling this via dart2js -->
+<script src="packages/browser/dart.js"></script>
+
+<!-- Add some debugging hooks to prove this is all working -->
+<button id="runExtension">Run extension.sayHello</button>
+<button id="clearAllExtensions">Clear all extensions</button>
+<script>
+    (function () {
+        document.getElementById('runExtension').addEventListener('click', function () {
+            debug.runCommand('extension.sayHello');
+        });
+
+        document.getElementById('clearAllExtensions').addEventListener('click', function () {
+            debug.disposeAllSubscriptions();
+        });
+    })();
+</script>
+</html>
