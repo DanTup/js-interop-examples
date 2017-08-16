@@ -4,8 +4,10 @@
         {
             "taskName": "build",
             "type": "shell",
-            "command": "dart2js",
+            "command": "dartdevc",
             "args": [
+                "--modules",
+                "common",
                 "-o",
                 "out/extension.js",
                 "lib/extension.dart"

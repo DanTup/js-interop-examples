@@ -1,17 +1,15 @@
-import 'package:js/js.dart' show allowInterop;
-import 'vscode_interop.dart';
+// import 'package:js/js.dart' show allowInterop;
+// import 'vscode_interop.dart';
 
-void main() {
-  // In Dart right now.
+void activate() {
   print('Hello World (from Dart)');
 
-  // This will work in Dart2js (and I imagine, DDC?) but not in Dartium without
-  // using allowInterop around the callback.
-  var disposable =
-      vscode.commands.registerCommand('extension.sayHello', allowInterop(() {
-    vscode.window.showInformationMessage('Hello World (from JS)');
-  }));
+  // var disposable =
+  //     vscode.commands.registerCommand('extension.sayHello', allowInterop(() {
+  //   vscode.window.showInformationMessage('Hello World (from JS)');
+  // }));
 
-  // Still JS Interop.
-  context.subscriptions.add(disposable);
+  // context.subscriptions.add(disposable);
 }
+
+void deactivate() {}

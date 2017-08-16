@@ -28,3 +28,4 @@ pubspec.lock
 
 .idea
 out/
+.DS_Store
