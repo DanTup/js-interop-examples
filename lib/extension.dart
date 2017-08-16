@@ -1,5 +1,5 @@
 import 'package:js/js.dart' show allowInterop;
-import 'package:js_interop_examples/vscode_interop.dart';
+import 'vscode_interop.dart';
 
 void main() {
   // In Dart right now.
@@ -7,11 +7,10 @@ void main() {
 
   // This will work in Dart2js (and I imagine, DDC?) but not in Dartium without
   // using allowInterop around the callback.
-  var disposable = vscode.commands.registerCommand(
-      'extension.sayHello',
-      allowInterop(() {
-        vscode.window.showInformationMessage('Hello World (from JS)');
-      }));
+  var disposable =
+      vscode.commands.registerCommand('extension.sayHello', allowInterop(() {
+    vscode.window.showInformationMessage('Hello World (from JS)');
+  }));
 
   // Still JS Interop.
   context.subscriptions.add(disposable);
